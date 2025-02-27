@@ -10,6 +10,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              includedLanguages: 'en,hi,te,ta,es',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+      }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </head>
 
   <body>
@@ -414,13 +424,27 @@
         <a href="" target="_blank"><span>Team AgriSens</span> </a>
       </div>
     </section>
+    <div class="language-selector-container">
+      <button id="langButton" class="lang-button">
+          <i class="fas fa-language"></i>
+      </button>
+      <div id="langPanel" class="lang-panel">
+          <div class="lang-panel-header">
+              <h3>Select Language</h3>
+              <button class="close-btn">&times;</button>
+          </div>
+          <div class="lang-options">
+              <div id="google_translate_element"></div>
+          </div>
+      </div>
+  </div>
 
     <!-- footer section ends -->
       <script src="script.js"></script>
     </chat>
 
     <!--Chat-bot-->
-
+    <script src="js/translate.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

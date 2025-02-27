@@ -832,5 +832,128 @@ html {
       flex-direction: row;
   }
 }
+/* Add these styles to your existing CSS */
+
+/* Language Selector Container */
+.language-selector-container {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+/* Language Button */
+.lang-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #3498db;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.lang-button:hover {
+  transform: scale(1.1);
+}
+
+.lang-button i {
+  font-size: 24px;
+  color: white;
+}
+
+/* Language Panel */
+.lang-panel {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  overflow: hidden;
+}
+
+.lang-panel.show {
+  display: block;
+  animation: slideUp 0.3s ease;
+}
+
+/* Panel Header */
+.lang-panel-header {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang-panel-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+/* Language Options */
+.lang-options {
+  padding: 15px;
+}
+
+/* Google Translate Customization */
+.goog-te-combo {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Hide Google Translate attribution */
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  margin: 0 !important;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .lang-panel {
+      width: 250px;
+  }
+}
 /* footer section ends */
   
