@@ -492,12 +492,34 @@ html {
 
 .features .heading {
   text-align: center;
-  padding: 1rem 0;
-  padding-bottom: 3rem;
-  margin-bottom: 3rem;
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
-  font-size: 3rem;
+  font-size: 3.5rem; /* Slightly larger for emphasis */
+  font-weight: bold;
   color: var(--Very-Dark-Blue);
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, rgba(0, 120, 255, 0.8), rgba(0, 255, 150, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Adding an underline effect */
+.features .heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--Soft-Red);
+  margin: 10px auto 0;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Subtle hover effect */
+.features .heading:hover::after {
+  width: 150px;
 }
 
 .features .row {
@@ -546,162 +568,188 @@ html {
   padding-bottom: 4rem;
 }
 
-/*Button-0 container start*/
+/* Button-0 container start */
 .button-container0 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
-  margin-left: 200px;
-  margin-right: 200px;
+  gap: 1.5rem; /* Adds spacing between buttons */
+  margin: 40px auto;
+  max-width: 80%; /* Ensures it doesn’t stretch too much */
 }
 
+/* General Button Styling */
 .buttonn {
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 12px 25px;
   border: 2px solid #00a859;
   border-radius: 50px;
-  background-color: #f2f2f2;
+  background: linear-gradient(135deg, #f2f2f2, #e6e6e6); /* Soft gradient effect */
   color: #333;
   text-decoration: none;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.5); /* 3D Neumorphism effect */
+  transition: all 0.3s ease;
   font-family: "Arial", sans-serif;
-  font-size: 15.5px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  width: 300px;
+  width: 280px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Default Green Color for the First Button */
+.button-container0 .buttonn:first-child {
+  background: #00a859;
+  color: white;
+  box-shadow: 0px 5px 15px rgba(0, 168, 89, 0.4);
+}
+
+/* Hover Effects */
 .buttonn:hover {
-  background-color: #00a859;
+  background: #00a859;
   color: white;
+  box-shadow: 0px 5px 15px rgba(0, 168, 89, 0.3); /* Glowing effect */
+  transform: translateY(-3px);
 }
 
-.active {
-  background-color: #00a859;
-  color: white;
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .button-container0 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
-  }
-
-  .buttonn {
-    padding: 10px 20px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .button-container0 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
-  }
-
-  .buttonn {
-    padding: 10px 20px;
-  }
-}
-
-/*Button-0 container end*/
-
-/* features section ends */
-
-/* about section starts  */
-
-.about .box-container {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(6, 1fr);
-  /* Fixed to 6 columns */
-  /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .about .box-container {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .about .box-container {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  }
-}
-
-.about .box {
-  border: 2px black solid;
-  box-shadow: black 0px 5px 15px;
-  border-radius: 0.5rem;
-  text-align: center;
-  padding: 2.5rem;
-}
-
-.about .box:hover {
-  border: 2px black solid;
+/* Click Effect */
+.buttonn:active {
+  transform: scale(0.95);
   box-shadow: none;
 }
 
-.about .box h3 {
-  font-size: 2rem;
-  padding: 0.2rem 0;
-  color: black;
+/* Active Button */
+.active {
+  background-color: #00a859;
+  color: white;
+  box-shadow: 0px 5px 15px rgba(0, 168, 89, 0.4);
 }
 
-.about .box p {
-  font-size: 1.7rem;
-  padding-bottom: 2.5rem;
-  color: black;
+/* Responsive Design */
+@media (max-width: 992px) {
+  .button-container0 {
+    max-width: 90%;
+    gap: 1rem;
+  }
+
+  .buttonn {
+    width: 250px;
+  }
 }
 
-/* Style for the member image */
+@media (max-width: 600px) {
+  .button-container0 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .buttonn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+/* Button-0 container end */
+
+
+.about .box-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Reduced gap for better spacing */
+  flex-wrap: wrap;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Reduced the size of the boxes */
+.about .box {
+  flex: 1 1 calc(30% - 1.5rem); /* Each card takes less width */
+  max-width: 25rem; /* Reduced max width */
+  border: 2px black solid;
+  box-shadow: black 0px 4px 12px;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 2rem; /* Reduced padding */
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.about .box:hover {
+  transform: translateY(-4px);
+  box-shadow: black 0px 8px 18px;
+}
+
+/* Image Styles */
 .box img {
-  width: 100%;
+  width: 60%; /* Further reduced image size */
   height: auto;
   border-radius: 8px;
-  /* Adds a slight border-radius to the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Adds a subtle box shadow */
+  margin-bottom: 0.8rem; /* Adjusted spacing */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 
 .box img:hover {
   transform: scale(1.05);
-  /* Increases the size of the image on hover */
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  /* Adds a darker box shadow on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* styles for member details and button */
-.box h3,
+/* Text Styling */
+.box h3 {
+  font-size: 2rem; /* Slightly reduced font size */
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
 .box p {
-  margin: 10px 0;
+  font-size: 1.6rem; /* Reduced paragraph font size */
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
+/* Button Styling */
 .all-btn {
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
   background-color: #3498db;
   color: #fff;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .all-btn:hover {
   background-color: #2980b9;
-  /* Change the hover background color */
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 992px) {
+  .about .box {
+    flex: 1 1 calc(45% - 1.5rem); /* Smaller boxes for better fit */
+  }
+}
+
+/* Responsive Design for Mobiles */
+@media (max-width: 600px) {
+  .about .box {
+    flex: 1 1 90%; /* Almost full width but not too large */
+  }
+
+  .box img {
+    width: 70%; /* Adjusted for mobile */
+  }
 }
 
 /* Style for the social media icons */
@@ -939,8 +987,7 @@ html {
 .lang-options {
   padding: 15px;
 }
-
-/* Google Translate Customization */
+/* Customize Google Translate Dropdown */
 .goog-te-combo {
   width: 100%;
   padding: 8px;
@@ -948,19 +995,40 @@ html {
   border-radius: 6px;
   font-size: 14px;
   color: #333;
+  background: #fff !important;
+  appearance: none;
 }
 
-/* Hide Google Translate attribution */
-.goog-logo-link {
+/* Hide Google Translate iframe */
+iframe.goog-te-menu-frame {
   display: none !important;
 }
 
-.goog-te-gadget {
-  color: transparent !important;
+/* Customize dropdown appearance */
+.goog-te-menu2 {
+  background: #f9f9f9 !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
 }
 
-.goog-te-gadget .goog-te-combo {
-  margin: 0 !important;
+/* Customize menu items */
+.goog-te-menu2-item {
+  font-size: 14px !important;
+  padding: 10px !important;
+  color: #333 !important;
+}
+
+/* Hover effect */
+.goog-te-menu2-item:hover {
+  background: #e0e0e0 !important;
+}
+
+/* Remove Google branding */
+.goog-te-gadget-simple {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 /* Animation */
