@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>AgriOP : YOUR SMART FARMING ASSISTANT</h1>
+    <h1>BioSage : YOUR SMART ASSITANT FOR BETTER FARMING</h1>
 </div>
 
 <div align="center">
@@ -8,10 +8,14 @@
 
 ![Screenshot 2025-01-22 210034](https://github.com/user-attachments/assets/5b945e7d-bbb0-4463-b06f-681445e102bd)
 
-
 ## Overview
 
-Smart Farming Assistant is an innovative solution that uses advanced technology to help farmers improve productivity and make better decisions. The platform features a Smart Crop Recommendation system powered by machine learning to suggest optimal crops based on soil nutrients, climate, and historical data. It also includes a Plant Disease Identification tool using convolutional neural networks (CNNs) to accurately diagnose plant diseases from uploaded images, enabling timely intervention. Additional features such as real-time Weather Forecasts, tailored Fertilizer Recommendations based on soil quality and crop requirements, and a Smart Farming Guide for crop management further enhance its value. With a user-friendly web app, farmers can easily access these insights and tools to improve farming practices.
+**BioSage** is an AI-driven agricultural decision support system designed to empower farmers with cutting-edge technology to enhance productivity and sustainability. The platform integrates advanced machine learning models to provide **Smart Crop Recommendations** based on soil nutrients, climate conditions, and historical data, ensuring optimal crop selection for maximum yield. Its **Plant Disease Identification** tool leverages convolutional neural networks (CNNs) to accurately diagnose diseases from uploaded images, enabling early detection and timely intervention. 
+
+Additional features include **real-time Weather Forecasts**, **customized Fertilizer Recommendations** tailored to soil quality and crop needs, and a **Smart Farming Guide** that offers actionable insights for crop management. With a user-friendly interface, BioSage ensures that farmers, regardless of their technical expertise, can easily access these tools and make data-driven decisions to improve farming practices, reduce costs, and promote sustainable agriculture. 
+
+Developed as part of the **AgriAI Hackathon 2024**, BioSage addresses critical challenges in modern farming, such as unpredictable soil conditions, pest infestations, and climate variability, making it a comprehensive solution for the agricultural community.
+
 
 ## Research Paper
 
@@ -198,7 +202,7 @@ Found 17572 files belonging to 38 classes.
 
 These results demonstrate the effectiveness of the Smart Crop Recommendation System with Plant Disease Identification in assisting farmers with informed crop selection and disease management, thereby contributing to improved agricultural practices and crop yields.
 
-## 👨‍💻 CONTRIBUTERS
+## 👨‍💻 CONTRIBUTERS OF BOHR'S BIT TEAM
 - [Shyam Modi](https://github.com/shyxmz)
 - [Vedant Maske](https://github.com/Vedant00Maske)
 - [Yagyansh Gupta](https://github.com/Yagyansh02)
