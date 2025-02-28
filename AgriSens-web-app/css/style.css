@@ -1075,4 +1075,94 @@ iframe.goog-te-menu-frame {
 }
 
 /* footer section ends */
-  
+  /* Newsletter Styles */
+.newsletter-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.newsletter-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-section h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.newsletter-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b6e0f3;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.subscribe-btn {
+  background-color: #b6e0f3;
+  color: #333;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.success-message {
+  display: none;
+  color: #4CAF50;
+  margin-top: 15px;
+  padding: 10px;
+}
+/* Add these to your existing CSS */
+.message {
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: center;
+  display: none;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.subscribe-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+.subscribe-btn[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
