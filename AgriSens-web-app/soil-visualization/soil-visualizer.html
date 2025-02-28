@@ -22,90 +22,127 @@
 
         .controls-panel {
             position: fixed;
-            right: 20px;
-            top: 20px;
+            right: 15px;
+            top: 15px;
             background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 8px;
+            width: 220px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
 
         .layer-info {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 5px;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
             transition: background-color 0.3s;
         }
 
+        h2 {
+            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            margin: 0 0 5px 0;
+        }
+
         .slider-container {
-            margin: 10px 0;
+            margin: 6px 0;
         }
 
         .slider-container label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+            font-size: 0.8rem;
         }
 
         input[type="range"] {
             width: 100%;
+            height: 4px;
         }
 
         .value-display {
             float: right;
             font-weight: bold;
+            font-size: 0.8rem;
         }
+
         .suggest-crops-section {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-}
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #ccc;
+        }
 
-.suggest-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
+        .suggest-button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
 
-.suggest-button:hover {
-    background-color: #45a049;
-}
+        .suggest-button:hover {
+            background-color: #45a049;
+        }
 
-.crop-suggestions {
-    margin-top: 15px;
-}
+        .crop-suggestions {
+            margin-top: 10px;
+        }
 
-.crop-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border-left: 4px solid #4CAF50;
-}
+        .crop-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border-left: 3px solid #4CAF50;
+        }
 
-.crop-card h4 {
-    margin: 0 0 5px 0;
-    color: #2c3e50;
-}
+        .crop-card h4 {
+            margin: 0 0 4px 0;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
 
-.crop-card p {
-    margin: 5px 0;
-    font-size: 0.9em;
-    color: #666;
-}
-        
+        .crop-card p {
+            margin: 3px 0;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* Custom scrollbar for the control panel */
+        .controls-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .controls-panel::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+        }
+
+        .controls-panel::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        /* Make control panel scrollable if content exceeds height */
+        @media screen and (max-height: 600px) {
+            .controls-panel {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="soil3D"></div>
     <div class="controls-panel">
-        <h2>Soil Layer Properties</h2>
+        <h2>Soil Properties</h2>
         <div class="layer-info" data-layer="topsoil">
             <h3>Topsoil</h3>
             <div class="slider-container">
@@ -113,14 +150,14 @@
                 <input type="range" min="0" max="100" value="50" class="moisture-slider">
             </div>
             <div class="slider-container">
-                <label>Organic Matter: <span class="value-display">30%</span></label>
+                <label>Organic: <span class="value-display">30%</span></label>
                 <input type="range" min="0" max="100" value="30" class="organic-slider">
             </div>
         </div>
         <div class="layer-info" data-layer="subsoil">
             <h3>Subsoil</h3>
             <div class="slider-container">
-                <label>Clay Content: <span class="value-display">40%</span></label>
+                <label>Clay: <span class="value-display">40%</span></label>
                 <input type="range" min="0" max="100" value="40" class="clay-slider">
             </div>
         </div>
@@ -132,9 +169,15 @@
             </div>
         </div>
         <div class="suggest-crops-section">
-            <button id="suggestCrops" class="suggest-button">Suggest Random Crops</button>
+            <button id="suggestCrops" class="suggest-button"></button>
             <div id="cropSuggestions" class="crop-suggestions"></div>
-        </div>
+            
+            <!-- Add this new section -->
+            <button id="generateRandomCrops" class="suggest-button" style="margin-top: 15px; background-color: #2196F3;">
+                Generate Suitable Crop
+            </button>
+            <div id="randomCropsList" class="crop-suggestions"></div>
+        </div>>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="soil-visualizer.js"></script>

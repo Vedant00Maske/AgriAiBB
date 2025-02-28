@@ -8,7 +8,8 @@ class SoilVisualizer {
         this.createLayers();
         this.setupLighting();
         this.setupControls();
-        this.setupCropSuggestions(); // Add this line
+        this.setupCropSuggestions();
+        this.setupRandomCropGenerator(); // Add this line
         this.animate();
     }
 
@@ -179,6 +180,126 @@ class SoilVisualizer {
                 moistureRange: "35-65%",
                 organicMatterRange: "20-40%",
                 soilType: "Sandy loam to clay"
+            },
+            // Additional crops
+            {
+                name: "Lettuce",
+                icon: "🥬",
+                moistureRange: "45-75%",
+                organicMatterRange: "25-45%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Bell Peppers",
+                icon: "🫑",
+                moistureRange: "50-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Onions",
+                icon: "🧅",
+                moistureRange: "35-60%",
+                organicMatterRange: "20-40%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Garlic",
+                icon: "🧄",
+                moistureRange: "30-55%",
+                organicMatterRange: "25-45%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Sweet Potato",
+                icon: "🍠",
+                moistureRange: "40-65%",
+                organicMatterRange: "30-50%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Pumpkin",
+                icon: "🎃",
+                moistureRange: "45-75%",
+                organicMatterRange: "35-55%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Cabbage",
+                icon: "🥬",
+                moistureRange: "40-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Broccoli",
+                icon: "🥦",
+                moistureRange: "45-75%",
+                organicMatterRange: "35-55%",
+                soilType: "Fertile loam"
+            },
+            {
+                name: "Cucumber",
+                icon: "🥒",
+                moistureRange: "50-80%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Eggplant",
+                icon: "🍆",
+                moistureRange: "45-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Strawberry",
+                icon: "🍓",
+                moistureRange: "40-70%",
+                organicMatterRange: "35-55%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Watermelon",
+                icon: "🍉",
+                moistureRange: "45-75%",
+                organicMatterRange: "30-50%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Peas",
+                icon: "🫛",
+                moistureRange: "40-70%",
+                organicMatterRange: "25-45%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Sunflower",
+                icon: "🌻",
+                moistureRange: "35-65%",
+                organicMatterRange: "20-40%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Sugarcane",
+                icon: "🎋",
+                moistureRange: "60-85%",
+                organicMatterRange: "30-50%",
+                soilType: "Clay loam"
+            },
+            {
+                name: "Radish",
+                icon: "🥬",
+                moistureRange: "35-65%",
+                organicMatterRange: "25-45%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Spinach",
+                icon: "🥬",
+                moistureRange: "45-75%",
+                organicMatterRange: "30-50%",
+                soilType: "Rich loamy soil"
             }
         ];
     
@@ -218,6 +339,52 @@ class SoilVisualizer {
                     </p>
                 `;
                 suggestionsDiv.appendChild(cropElement);
+            });
+        });
+    }
+    setupRandomCropGenerator() {
+        const randomCrops = [
+            { name: "Spinach", icon: "🥬" },
+            { name: "Lettuce", icon: "🥬" },
+            { name: "Broccoli", icon: "🥦" },
+            { name: "Cauliflower", icon: "🥬" },
+            { name: "Peas", icon: "🫛" },
+            { name: "Bell Peppers", icon: "🫑" },
+            { name: "Eggplant", icon: "🍆" },
+            { name: "Cucumber", icon: "🥒" },
+            { name: "Onion", icon: "🧅" },
+            { name: "Garlic", icon: "🧄" },
+            { name: "Sweet Potato", icon: "🍠" },
+            { name: "Pumpkin", icon: "🎃" },
+            { name: "Watermelon", icon: "🍉" },
+            { name: "Strawberry", icon: "🍓" },
+            { name: "Mushroom", icon: "🍄" }
+        ];
+    
+        const generateButton = document.getElementById('generateRandomCrops');
+        const randomCropsList = document.getElementById('randomCropsList');
+    
+        generateButton.addEventListener('click', () => {
+            // Clear previous list
+            randomCropsList.innerHTML = '';
+    
+            // Generate 4 random crops
+            const selectedCrops = new Set();
+            while (selectedCrops.size < 4) {
+                const randomIndex = Math.floor(Math.random() * randomCrops.length);
+                selectedCrops.add(randomCrops[randomIndex]);
+            }
+    
+            // Display the random crops
+            selectedCrops.forEach(crop => {
+                const cropElement = document.createElement('div');
+                cropElement.className = 'crop-card';
+                cropElement.style.borderLeft = '4px solid #2196F3';
+                cropElement.innerHTML = `
+                    <h4>${crop.icon} ${crop.name}</h4>
+                    <p style="color: #666;">Random Crop Suggestion</p>
+                `;
+                randomCropsList.appendChild(cropElement);
             });
         });
     }
