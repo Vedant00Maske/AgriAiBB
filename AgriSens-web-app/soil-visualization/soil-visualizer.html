@@ -55,6 +55,50 @@
             float: right;
             font-weight: bold;
         }
+        .suggest-crops-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.suggest-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.suggest-button:hover {
+    background-color: #45a049;
+}
+
+.crop-suggestions {
+    margin-top: 15px;
+}
+
+.crop-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+.crop-card h4 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+}
+
+.crop-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
         
     </style>
 </head>
@@ -86,6 +130,10 @@
                 <label>Density: <span class="value-display">70%</span></label>
                 <input type="range" min="0" max="100" value="70" class="density-slider">
             </div>
+        </div>
+        <div class="suggest-crops-section">
+            <button id="suggestCrops" class="suggest-button">Suggest Random Crops</button>
+            <div id="cropSuggestions" class="crop-suggestions"></div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

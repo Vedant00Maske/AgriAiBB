@@ -8,6 +8,7 @@ class SoilVisualizer {
         this.createLayers();
         this.setupLighting();
         this.setupControls();
+        this.setupCropSuggestions(); // Add this line
         this.animate();
     }
 
@@ -119,6 +120,117 @@ class SoilVisualizer {
                 y: e.clientY
             };
         });
+    }
+
+    setupCropSuggestions() {
+        const crops = [
+            {
+                name: "Wheat",
+                icon: "🌾",
+                moistureRange: "30-70%",
+                organicMatterRange: "20-40%",
+                soilType: "Clay loam to sandy loam"
+            },
+            {
+                name: "Corn",
+                icon: "🌽",
+                moistureRange: "50-80%",
+                organicMatterRange: "25-45%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Tomatoes",
+                icon: "🍅",
+                moistureRange: "40-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Potatoes",
+                icon: "🥔",
+                moistureRange: "45-65%",
+                organicMatterRange: "35-55%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Carrots",
+                icon: "🥕",
+                moistureRange: "35-60%",
+                organicMatterRange: "20-40%",
+                soilType: "Sandy soil"
+            },
+            {
+                name: "Rice",
+                icon: "🌾",
+                moistureRange: "70-90%",
+                organicMatterRange: "25-45%",
+                soilType: "Clay soil"
+            },
+            {
+                name: "Soybeans",
+                icon: "🫘",
+                moistureRange: "40-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Loamy soil"
+            },
+            {
+                name: "Cotton",
+                icon: "🧶",
+                moistureRange: "35-65%",
+                organicMatterRange: "20-40%",
+                soilType: "Sandy loam to clay"
+            }
+        ];
+    
+        const suggestButton = document.getElementById('suggestCrops');
+        const suggestionsDiv = document.getElementById('cropSuggestions');
+    
+        suggestButton.addEventListener('click', () => {
+            // Get current soil parameters
+            const moisture = document.querySelector('.moisture-slider').value;
+            const organicMatter = document.querySelector('.organic-slider').value;
+            const clayContent = document.querySelector('.clay-slider').value;
+    
+            // Clear previous suggestions
+            suggestionsDiv.innerHTML = '';
+    
+            // Randomly select 3 different crops
+            const selectedCrops = [];
+            while (selectedCrops.length < 3) {
+                const randomCrop = crops[Math.floor(Math.random() * crops.length)];
+                if (!selectedCrops.includes(randomCrop)) {
+                    selectedCrops.push(randomCrop);
+                }
+            }
+    
+            // Display selected crops with current soil conditions
+            selectedCrops.forEach(crop => {
+                const cropElement = document.createElement('div');
+                cropElement.className = 'crop-card';
+                cropElement.innerHTML = `
+                    <h4>${crop.icon} ${crop.name}</h4>
+                    <p>Ideal Moisture: ${crop.moistureRange}</p>
+                    <p>Ideal Organic Matter: ${crop.organicMatterRange}</p>
+                    <p>Preferred Soil: ${crop.soilType}</p>
+                    <p style="color: ${this.getConditionColor(moisture, parseInt(crop.moistureRange))};
+                              font-weight: bold;">
+                        Current Conditions: ${moisture}% moisture
+                    </p>
+                `;
+                suggestionsDiv.appendChild(cropElement);
+            });
+        });
+    }
+    
+    getConditionColor(current, ideal) {
+        const [min, max] = ideal.split('-').map(x => parseInt(x));
+        if (current >= min && current <= max) {
+            return '#4CAF50'; // Green for optimal
+        } else if (current < min - 20 || current > max + 20) {
+            return '#f44336'; // Red for poor
+        } else {
+            return '#ff9800'; // Orange for suboptimal
+        }
     }
 
     animate() {
