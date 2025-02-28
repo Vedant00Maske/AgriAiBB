@@ -9,7 +9,7 @@
   border: none;
   text-transform: capitalize;
   transition: 0.2s ease-in-out;
-  color: #000;
+  color: fff;
   text-decoration: none;
 }
 
@@ -103,6 +103,7 @@ html {
   margin-left: 2rem;
   font-size: 1.7rem;
   text-transform: uppercase;
+  color: white; /* Changed to white */
 }
 
 .header .navbar a:hover {
@@ -126,7 +127,7 @@ html {
   padding: 1rem 1rem;
   background-color: #eee;
   font-size: 3rem;
-  color: var(--Soft-Blue);
+  color: var();
   border-radius: 0.5rem;
   cursor: pointer;
   display: none;
@@ -254,6 +255,31 @@ html {
   object-fit: fill;
   z-index: 0;
   /* Place the image behind the content */
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Media Queries Home */
@@ -955,5 +981,30 @@ html {
       width: 250px;
   }
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1a1a1a; /* Adjust as needed */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between image and text */
+}
+
+.logo img {
+  height: 40px; /* Adjust as needed */
+  display: block;
+}
+
+.logo h1 {
+  color: white; /* Adjust text color */
+  font-size: 24px; /* Adjust size */
+  margin: 0; /* Remove default margin */
+}
+
 /* footer section ends */
   
