@@ -41,7 +41,7 @@ function createDiscussionCards() {
                 <span><i class="fas fa-calendar"></i> ${discussion.date}</span>
             </p>
             <p class="discussion-topic">
-                <i class="fas fa-tag"></i> ${discussion.topic}
+                <i class="fas"></i> ${discussion.topic}
             </p>
             <p>${discussion.excerpt}</p>
             <p class="discussion-stats">

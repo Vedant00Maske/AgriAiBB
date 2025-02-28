@@ -78,18 +78,12 @@
       </div>
 
       <div class="button-container0">
-        <a href="https://crop-recomm.streamlit.app/" class="buttonn active"
-          >Crop Recommendations</a
-        >
-        <a
-          href="https://agrisens-crop-disease-pred.streamlit.app/"
-          class="buttonn"
-          >Identify Plant Diseases</a
-        >
+        <a href="http://localhost:8501" class="buttonn active">Crop Recommendations</a>
+        <a href="http://localhost:8502" class="buttonn">Identify Plant Diseases</a>
         <a href="weather-forecast/index.html" class="buttonn"
           >Today's Weather Forecast</a
         >
-        <a href="developing-phase/index.html" class="buttonn"
+        <a href="http://localhost:8503" class="buttonn"
           >Fertilizer recommendation</a
         >
         <a href="guide/index.html" class="buttonn">Smart Farming Guidance</a>
@@ -304,25 +298,25 @@
 
     <!-- footer section starts  -->
      <!-- Add this before your footer -->
-<div class="newsletter-section" id="newsletter">
-  <div class="newsletter-container">
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Get daily weather updates directly in your inbox!</p>
-      <form id="newsletterForm" class="newsletter-form">
-          <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-              <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-          </div>
-          <button type="submit" class="subscribe-btn">Subscribe</button>
-      </form>
-      <div id="success-message" class="success-message"></div>
+     <div class="newsletter-section" id="newsletter">
+      <div class="newsletter-container">
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>Get daily weather updates directly in your inbox!</p>
+          <form id="newsletterForm" class="newsletter-form">
+              <div class="form-group">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                  <textarea id="feedback" name="feedback" placeholder="Your Feedback (Optional)" rows="4"></textarea>
+              </div>
+              <button type="submit" class="subscribe-btn">Subscribe</button>
+          </form>
+          <div id="success-message" class="success-message"></div>
+      </div>
   </div>
-</div>
 
     <section class="footer" id="footer">
       <div class="box-container">

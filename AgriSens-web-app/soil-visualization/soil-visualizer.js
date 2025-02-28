@@ -300,6 +300,146 @@ class SoilVisualizer {
                 moistureRange: "45-75%",
                 organicMatterRange: "30-50%",
                 soilType: "Rich loamy soil"
+            },
+            {
+                name: "Cauliflower",
+                icon: "🥦",
+                moistureRange: "45-75%",
+                organicMatterRange: "35-55%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Okra",
+                icon: "🫑",
+                moistureRange: "40-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Ginger",
+                icon: "🫚",
+                moistureRange: "50-80%",
+                organicMatterRange: "35-55%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Turmeric",
+                icon: "🫚",
+                moistureRange: "45-75%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Brussels Sprouts",
+                icon: "🥬",
+                moistureRange: "45-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Fertile loam"
+            },
+            {
+                name: "Asparagus",
+                icon: "🥬",
+                moistureRange: "40-65%",
+                organicMatterRange: "35-55%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Kale",
+                icon: "🥬",
+                moistureRange: "40-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Millet",
+                icon: "🌾",
+                moistureRange: "35-60%",
+                organicMatterRange: "20-40%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Sorghum",
+                icon: "🌾",
+                moistureRange: "40-65%",
+                organicMatterRange: "25-45%",
+                soilType: "Clay loam"
+            },
+            {
+                name: "Chickpeas",
+                icon: "🫘",
+                moistureRange: "35-65%",
+                organicMatterRange: "25-45%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Lentils",
+                icon: "🫘",
+                moistureRange: "35-60%",
+                organicMatterRange: "25-45%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Mustard",
+                icon: "🌱",
+                moistureRange: "35-65%",
+                organicMatterRange: "25-45%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Papaya",
+                icon: "🍈",
+                moistureRange: "50-80%",
+                organicMatterRange: "35-55%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Guava",
+                icon: "🍎",
+                moistureRange: "45-75%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Banana",
+                icon: "🍌",
+                moistureRange: "60-85%",
+                organicMatterRange: "35-55%",
+                soilType: "Rich loamy soil"
+            },
+            {
+                name: "Coconut",
+                icon: "🥥",
+                moistureRange: "55-80%",
+                organicMatterRange: "30-50%",
+                soilType: "Sandy loam"
+            },
+            {
+                name: "Cassava",
+                icon: "🥔",
+                moistureRange: "50-75%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Taro",
+                icon: "🥔",
+                moistureRange: "60-85%",
+                organicMatterRange: "35-55%",
+                soilType: "Clay loam"
+            },
+            {
+                name: "Green Beans",
+                icon: "🫘",
+                moistureRange: "45-70%",
+                organicMatterRange: "30-50%",
+                soilType: "Well-drained loam"
+            },
+            {
+                name: "Black Pepper",
+                icon: "🫑",
+                moistureRange: "60-85%",
+                organicMatterRange: "35-55%",
+                soilType: "Well-drained loam"
             }
         ];
     
@@ -344,21 +484,51 @@ class SoilVisualizer {
     }
     setupRandomCropGenerator() {
         const randomCrops = [
-            { name: "Spinach", icon: "🥬" },
-            { name: "Lettuce", icon: "🥬" },
-            { name: "Broccoli", icon: "🥦" },
-            { name: "Cauliflower", icon: "🥬" },
-            { name: "Peas", icon: "🫛" },
-            { name: "Bell Peppers", icon: "🫑" },
-            { name: "Eggplant", icon: "🍆" },
-            { name: "Cucumber", icon: "🥒" },
-            { name: "Onion", icon: "🧅" },
-            { name: "Garlic", icon: "🧄" },
-            { name: "Sweet Potato", icon: "🍠" },
-            { name: "Pumpkin", icon: "🎃" },
-            { name: "Watermelon", icon: "🍉" },
-            { name: "Strawberry", icon: "🍓" },
-            { name: "Mushroom", icon: "🍄" }
+            { name: "Wheat", icon: "🌾" },            // Wheat plant
+    { name: "Corn", icon: "🌽" },             // Corn
+    { name: "Tomatoes", icon: "🍅" },         // Tomato
+    { name: "Potatoes", icon: "🥔" },         // Potato
+    { name: "Carrots", icon: "🥕" },          // Carrot
+    { name: "Rice", icon: "🌾" },             // Rice plant
+    { name: "Soybeans", icon: "🫘" },         // Beans
+    { name: "Cotton", icon: "🌿" },           // Plant (no specific cotton emoji)
+    { name: "Lettuce", icon: "🥬" },          // Leafy green
+    { name: "Bell Peppers", icon: "🫑" },     // Pepper
+    { name: "Onions", icon: "🧅" },           // Onion
+    { name: "Garlic", icon: "🧄" },           // Garlic
+    { name: "Sweet Potato", icon: "🍠" },     // Sweet potato
+    { name: "Pumpkin", icon: "🎃" },          // Pumpkin
+    { name: "Cabbage", icon: "🥬" },          // Leafy green
+    { name: "Broccoli", icon: "🥦" },         // Broccoli
+    { name: "Cucumber", icon: "🥒" },         // Cucumber
+    { name: "Eggplant", icon: "🍆" },         // Eggplant
+    { name: "Strawberry", icon: "🍓" },       // Strawberry
+    { name: "Watermelon", icon: "🍉" },       // Watermelon
+    { name: "Peas", icon: "🫛" },             // Peas
+    { name: "Sunflower", icon: "🌻" },        // Sunflower
+    { name: "Sugarcane", icon: "🎋" },        // Bamboo (closest to sugarcane)
+    { name: "Radish", icon: "🥕" },           // Using carrot (similar root vegetable)
+    { name: "Spinach", icon: "🥬" },          // Leafy green
+    { name: "Cauliflower", icon: "🥦" },      // Using broccoli (similar)
+    { name: "Okra", icon: "🫑" },             // Using pepper (similar shape)
+    { name: "Ginger", icon: "🫚" },           // Root/herb
+    { name: "Turmeric", icon: "🫚" },         // Root/herb
+    { name: "Brussels Sprouts", icon: "🥬" },  // Leafy green
+    { name: "Asparagus", icon: "🥬" },        // Green vegetable
+    { name: "Kale", icon: "🥬" },             // Leafy green
+    { name: "Millet", icon: "🌾" },           // Grain
+    { name: "Sorghum", icon: "🌾" },          // Grain
+    { name: "Chickpeas", icon: "🫘" },        // Beans
+    { name: "Lentils", icon: "🫘" },          // Beans
+    { name: "Mustard", icon: "🌱" },          // Seedling
+    { name: "Papaya", icon: "🍈" },           // Melon (similar fruit)
+    { name: "Guava", icon: "🍏" },            // Green apple (similar fruit)
+    { name: "Banana", icon: "🍌" },           // Banana
+    { name: "Coconut", icon: "🥥" },          // Coconut
+    { name: "Cassava", icon: "🥔" },          // Root vegetable
+    { name: "Taro", icon: "🥔" },             // Root vegetable
+    { name: "Green Beans", icon: "🫘" },      // Beans
+    { name: "Black Pepper", icon: "🫑" }      // Pepper
         ];
     
         const generateButton = document.getElementById('generateRandomCrops');
@@ -382,7 +552,7 @@ class SoilVisualizer {
                 cropElement.style.borderLeft = '4px solid #2196F3';
                 cropElement.innerHTML = `
                     <h4>${crop.icon} ${crop.name}</h4>
-                    <p style="color: #666;">Random Crop Suggestion</p>
+                    <p style="color: #666;">Suggested Crop For the Soil </p>
                 `;
                 randomCropsList.appendChild(cropElement);
             });
