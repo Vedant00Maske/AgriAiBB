@@ -1,0 +1,111 @@
+.calendar-wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-light);
+    gap: 4rem;
+}
+
+.season-wheel {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #88BDBC 0deg 90deg,  /* Spring */
+        #254E58 90deg 180deg,  /* Summer */
+        #112D32 180deg 270deg,  /* Autumn */
+        #4F4A41 270deg 360deg  /* Winter */
+    );
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease;
+}
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.season {
+    position: absolute;
+    font-size: 1.2rem;
+    color: white;
+    transform: rotate(45deg);
+}
+
+.spring { top: 20%; right: 20%; }
+.summer { bottom: 20%; right: 20%; }
+.autumn { bottom: 20%; left: 20%; }
+.winter { top: 20%; left: 20%; }
+
+.crop-indicators {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.crop-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.crop-dot:hover {
+    transform: scale(1.5);
+}
+
+.crop-details {
+    width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.crop-list {
+    margin-top: 1rem;
+}
+
+.crop-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.crop-item:hover {
+    background-color: rgba(136, 189, 188, 0.1);
+}
+
+.crop-icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    border-radius: 50%;
+}
