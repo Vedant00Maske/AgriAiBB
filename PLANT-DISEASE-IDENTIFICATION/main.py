@@ -5,6 +5,44 @@ import time
 from PIL import Image
 from gemini_service import get_treatment  # Import Gemini API function
 
+# Sidebar with new color
+st.sidebar.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: #2C3930;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+# Custom CSS for the entire app
+st.markdown(
+    """
+    <style>
+    .stButton>button {
+        background-color: #A27B5C;
+        color: white;
+        border: none;
+    }
+    .stButton>button:hover {
+        background-color: #8B6B4F;
+    }
+    .main {
+        background-color: #3F4F44;
+    }
+    h1, h2 {
+        color: #A27B5C !important;
+    }
+    div[data-testid="stMarkdownContainer"] {
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Load the model
 @st.cache_resource
 def load_model():
@@ -20,12 +58,12 @@ def model_prediction(test_image):
     return np.argmax(predictions)  # Return index of max element
 
 # Sidebar
-st.sidebar.title("🌱 AgriSens")
+st.sidebar.title("🌱 BioSage")
 app_mode = st.sidebar.selectbox("Select Page", ["🏠 HOME", "🔬 DISEASE RECOGNITION"])
 
 # Display header image
 img = Image.open("Diseases.png")
-st.image(img, use_column_width=True)
+st.image(img, use_container_width=True)
 
 # Disease labels
 class_names = ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy',
@@ -46,7 +84,7 @@ class_names = ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_r
 # Main Page
 if app_mode == "🏠 HOME":
     st.markdown("<h1 style='text-align: center; color: green;'>🌿 SMART DISEASE DETECTION</h1>", unsafe_allow_html=True)
-    st.write("Welcome to AgriSens! Select **Disease Recognition** from the sidebar to detect plant diseases.")
+    st.write("Welcome to BioSage! Select **Disease Recognition** from the sidebar to detect plant diseases.")
 
 # Prediction Page
 elif app_mode == "🔬 DISEASE RECOGNITION":
@@ -54,9 +92,30 @@ elif app_mode == "🔬 DISEASE RECOGNITION":
     
     test_image = st.file_uploader("📸 **Upload an Image of the Affected Plant:**", type=["jpg", "png", "jpeg"])
     
-    if test_image and st.button("🖼️ Show Image"):
-        st.image(test_image, use_column_width=True)
-    
+    # Display image preview automatically when uploaded in a contained box
+    if test_image:
+        col1, col2, col3 = st.columns([1,2,1])
+        with col2:
+            st.markdown("""
+                <style>
+                .contained-image {
+                    width: 300px;
+                    height: 300px;
+                    margin: auto;
+                    padding: 10px;
+                    border: 2px solid #A27B5C;
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+                </style>
+            """, unsafe_allow_html=True)
+            st.image(
+                test_image, 
+                width=300,  # Smaller fixed width
+                caption="Uploaded Plant Image",
+                clamp=True,
+                output_format="PNG"
+            )
     if test_image and st.button("🔍 Predict Disease"):
         st.snow()
         st.write("🔬 **Analyzing...** Please wait...")
@@ -79,8 +138,8 @@ elif app_mode == "🔬 DISEASE RECOGNITION":
         if 'treatment' in st.session_state:
             treatment = st.session_state['treatment']
             st.markdown(f"""
-            <div style="background-color: #2e2e2e; padding: 10px; border-radius: 10px; margin-top: 10px;">
-                <h3 style="color: #90ee90;">Recommended Treatment for {predicted_disease}:</h3>
-                <p style="color: #d3d3d3;">{treatment}</p>
-            </div>
-            """, unsafe_allow_html=True)
+        <div style="background-color: #2C3930; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #A27B5C;">
+            <h3 style="color: #A27B5C;">Recommended Treatment for {predicted_disease}:</h3>
+            <p style="color: white;">{treatment}</p>
+        </div>
+        """, unsafe_allow_html=True)
