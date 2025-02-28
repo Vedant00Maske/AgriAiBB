@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Soil Layer Visualizer</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+        }
+        
+        #soil3D {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls-panel {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .layer-info {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .slider-container {
+            margin: 10px 0;
+        }
+
+        .slider-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        .value-display {
+            float: right;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="soil3D"></div>
+    <div class="controls-panel">
+        <h2>Soil Layer Properties</h2>
+        <div class="layer-info" data-layer="topsoil">
+            <h3>Topsoil</h3>
+            <div class="slider-container">
+                <label>Moisture: <span class="value-display">50%</span></label>
+                <input type="range" min="0" max="100" value="50" class="moisture-slider">
+            </div>
+            <div class="slider-container">
+                <label>Organic Matter: <span class="value-display">30%</span></label>
+                <input type="range" min="0" max="100" value="30" class="organic-slider">
+            </div>
+        </div>
+        <div class="layer-info" data-layer="subsoil">
+            <h3>Subsoil</h3>
+            <div class="slider-container">
+                <label>Clay Content: <span class="value-display">40%</span></label>
+                <input type="range" min="0" max="100" value="40" class="clay-slider">
+            </div>
+        </div>
+        <div class="layer-info" data-layer="bedrock">
+            <h3>Bedrock</h3>
+            <div class="slider-container">
+                <label>Density: <span class="value-display">70%</span></label>
+                <input type="range" min="0" max="100" value="70" class="density-slider">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="soil-visualizer.js"></script>
+</body>
+</html>

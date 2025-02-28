@@ -1,27 +1,53 @@
+:root {
+    --wheel-primary: rgba(136, 189, 188, 0.9);
+    --wheel-summer: rgba(37, 78, 88, 0.9);
+    --wheel-autumn: rgba(17, 45, 50, 0.9);
+    --wheel-winter: rgba(79, 74, 65, 0.9);
+    --text-light: #ffffff;
+    --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
 .calendar-wheel-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--bg-light);
+    padding: 2rem;
     gap: 4rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 .season-wheel {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     background: conic-gradient(
         from 0deg,
-        #88BDBC 0deg 90deg,  /* Spring */
-        #254E58 90deg 180deg,  /* Summer */
-        #112D32 180deg 270deg,  /* Autumn */
-        #4F4A41 270deg 360deg  /* Winter */
+        var(--wheel-primary) 0deg 90deg,
+        var(--wheel-summer) 90deg 180deg,
+        var(--wheel-autumn) 180deg 270deg,
+        var(--wheel-winter) 270deg 360deg
     );
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-strong),
+                inset 0 0 50px rgba(255, 255, 255, 0.2);
     transform: rotate(-45deg);
-    transition: transform 0.5s ease;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 15px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
 }
 
 .wheel-center {
@@ -29,83 +55,163 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
-    width: 150px;
-    height: 150px;
-    background: white;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-soft);
     z-index: 2;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+}
+
+.wheel-center h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 0;
+    text-align: center;
+}
+
+.wheel-center p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0.5rem 0 0;
+    text-align: center;
 }
 
 .season {
     position: absolute;
-    font-size: 1.2rem;
-    color: white;
+    font-size: 1.4rem;
+    color: var(--text-light);
     transform: rotate(45deg);
-}
-
-.spring { top: 20%; right: 20%; }
-.summer { bottom: 20%; right: 20%; }
-.autumn { bottom: 20%; left: 20%; }
-.winter { top: 20%; left: 20%; }
-
-.crop-indicators {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-.crop-dot {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    padding: 1rem;
+    transition: all 0.3s ease;
 }
 
-.crop-dot:hover {
-    transform: scale(1.5);
+.season:hover {
+    transform: rotate(45deg) scale(1.1);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
+
+.spring { top: 22%; right: 22%; }
+.summer { bottom: 22%; right: 22%; }
+.autumn { bottom: 22%; left: 22%; }
+.winter { top: 22%; left: 22%; }
 
 .crop-details {
-    width: 300px;
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .crop-list {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .crop-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.8rem;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
-    transition: background-color 0.3s ease;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(136, 189, 188, 0.2);
 }
 
 .crop-item:hover {
+    transform: translateX(10px);
     background-color: rgba(136, 189, 188, 0.1);
+    box-shadow: var(--shadow-soft);
 }
 
 .crop-icon {
-    width: 30px;
-    height: 30px;
-    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
+    box-shadow: var(--shadow-soft);
+}
+
+.season-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(136, 189, 188, 0.3);
+}
+
+.crop-info h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+}
+
+.crop-info p {
+    margin: 0.2rem 0;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Add some animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.wheel-center:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .calendar-wheel-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .season-wheel {
+        width: 400px;
+        height: 400px;
+    }
+
+    .wheel-center {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 500px) {
+    .season-wheel {
+        width: 300px;
+        height: 300px;
+    }
+
+    .wheel-center {
+        width: 120px;
+        height: 120px;
+    }
+
+    .crop-details {
+        width: 90%;
+        padding: 1.5rem;
+    }
 }
