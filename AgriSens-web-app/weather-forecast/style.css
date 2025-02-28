@@ -7,31 +7,37 @@
     font-family: sans-serif;
 }
   
-body{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(img/bg.jpg);
-    background-size: fill;
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(img/bg.jpeg);
+  background-size: cover;  /* Ensures the image covers the whole screen */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
 }
 
+
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fa5757;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .header-title {
-    color: #fff;
-    font-size: 24px;
-    margin: 0;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(5px); /* Adds a soft blur effect */
+}
+
+.header-title {
+  color: #d3d3d3; /* Light gray color for a softer contrast */
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 
 .container{
     width: 400px;
@@ -163,7 +169,7 @@ body{
 }
 
 .footer {
-    background-color: #c5bfbf;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     text-align: center;
     position: fixed;
