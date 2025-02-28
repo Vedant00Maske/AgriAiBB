@@ -60,7 +60,6 @@ function displayCurrentWeather(weather_data) {
 function displayForecast(forecast_data) {
     // Clear previous forecast
     forecast_container.innerHTML = `
-        <h2>5-Day Forecast</h2>
         <div class="forecast-days-container"></div>
     `;
 
