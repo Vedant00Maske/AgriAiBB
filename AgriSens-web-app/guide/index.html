@@ -42,7 +42,82 @@
         </div>
       </header>
       <div id="cropInfo" class="crop-info">
-        <!-- Crop information will be displayed here -->
+        <div class="crop-info-grid">
+          <div class="crop-image-section">
+            <img src="" alt="Crop Image" class="crop-image" id="cropImage">
+          </div>
+
+          <div class="info-card soil-requirements">
+            <div class="info-card-header">
+              <h3><i class="fas fa-water"></i> Soil Requirements</h3>
+            </div>
+            <div class="info-card-content">
+              <div class="data-point">
+                <i class="fas fa-tint"></i>
+                <span class="data-label">Moisture:</span>
+                <span class="data-value" id="moisture">-</span>
+              </div>
+              <div class="data-point">
+                <i class="fas fa-flask"></i>
+                <span class="data-label">pH Level:</span>
+                <span class="data-value" id="ph">-</span>
+              </div>
+              <div class="data-point">
+                <i class="fas fa-seedling"></i>
+                <span class="data-label">Nutrients:</span>
+                <span class="data-value" id="nutrients">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card climate-conditions">
+            <div class="info-card-header">
+              <h3><i class="fas fa-cloud-sun"></i> Climate Conditions</h3>
+            </div>
+            <div class="info-card-content">
+              <div class="data-point">
+                <i class="fas fa-temperature-high"></i>
+                <span class="data-label">Temperature:</span>
+                <span class="data-value" id="temperature">-</span>
+              </div>
+              <div class="data-point">
+                <i class="fas fa-tint"></i>
+                <span class="data-label">Humidity:</span>
+                <span class="data-value" id="humidity">-</span>
+              </div>
+              <div class="data-point">
+                <i class="fas fa-cloud-rain"></i>
+                <span class="data-label">Rainfall:</span>
+                <span class="data-value" id="rainfall">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card growing-season">
+            <div class="info-card-header">
+              <h3><i class="fas fa-calendar-alt"></i> Growing Season</h3>
+            </div>
+            <div class="info-card-content">
+              <div class="data-point">
+                <i class="fas fa-clock"></i>
+                <span class="data-label">Duration:</span>
+                <span class="data-value" id="duration">-</span>
+              </div>
+              <div class="data-point">
+                <i class="fas fa-sun"></i>
+                <span class="data-label">Best Season:</span>
+                <span class="data-value" id="season">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tips-section">
+            <h4><i class="fas fa-lightbulb"></i> Growing Tips</h4>
+            <ul class="tips-list" id="growingTips">
+              <!-- Tips will be added dynamically -->
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
