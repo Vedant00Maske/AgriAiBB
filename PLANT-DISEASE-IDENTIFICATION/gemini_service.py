@@ -2,12 +2,8 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-# Load API Key
-load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
 # Configure Gemini API
-genai.configure(api_key=GEMINI_API_KEY)
+genai.configure(api_key="AIzaSyAKL2JLf5USXrGvIz6QTA72soKdIuFg4y0")
 
 def get_treatment(disease_name):
     try:
