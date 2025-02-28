@@ -12,7 +12,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 def get_treatment(disease_name):
     try:
         model = genai.GenerativeModel("gemini-1.5-flash")  # Use free-tier model
-        prompt = f"What are the treatments for {disease_name} in crops? Provide a detailed solution including prevention and cure."
+        prompt = f"Provide a concise treatment plan for {disease_name} in crops. Include: \n1. Prevention methods \n2. Cure methods \nFormat the response in bullet points."
         
         response = model.generate_content(prompt)
         return response.text  # Extract text response

@@ -63,13 +63,24 @@ elif app_mode == "🔬 DISEASE RECOGNITION":
         result_index = model_prediction(test_image)
         predicted_disease = class_names[result_index]
         
+        st.session_state['predicted_disease'] = predicted_disease
         st.success(f"🌱 **Identified Disease:** **{predicted_disease}**")
 
+    if 'predicted_disease' in st.session_state:
+        predicted_disease = st.session_state['predicted_disease']
+        
         # Treatment button with loading animation
         if st.button("💊 Get Treatment Solution", key="treatment_btn"):
             with st.spinner("🧑‍⚕️ Fetching AI-powered treatment recommendations..."):
-                time.sleep(3)  # Simulate loading delay
+                time.sleep(2)  # Simulate loading delay
                 treatment = get_treatment(predicted_disease)
+                st.session_state['treatment'] = treatment
 
-            st.success(f"**Recommended Treatment for {predicted_disease}:**")
-            st.write(treatment)
+        if 'treatment' in st.session_state:
+            treatment = st.session_state['treatment']
+            st.markdown(f"""
+            <div style="background-color: #2e2e2e; padding: 10px; border-radius: 10px; margin-top: 10px;">
+                <h3 style="color: #90ee90;">Recommended Treatment for {predicted_disease}:</h3>
+                <p style="color: #d3d3d3;">{treatment}</p>
+            </div>
+            """, unsafe_allow_html=True)
