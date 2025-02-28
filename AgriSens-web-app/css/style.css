@@ -112,13 +112,13 @@ html {
 
 .header .navbar .btn {
   padding: 0.6rem 3rem;
-  background-color: var(--Soft-Red);
+  background-color: #8B6E4E;
   color: #fff;
   border-radius: 5rem;
 }
 
 .header .navbar .btn:hover {
-  color: var(--Soft-Red);
+  color: #8B6E4E;
   background-color: transparent;
   border: 2px solid var(--Soft-Red);
 }
@@ -233,7 +233,7 @@ html {
   text-transform: uppercase;
   font-size: 1.5em;
   font-weight: bold;
-  background-color: #3498db;
+  background-color: #463428;
   color: #fff;
   border-radius: 50px;
   transition: background-color 0.3s ease;
@@ -492,34 +492,46 @@ html {
 
 .features .heading {
   text-align: center;
-  font-size: 3.5rem; /* Slightly larger for emphasis */
+  font-size: 3.5rem;
   font-weight: bold;
-  color: var(--Very-Dark-Blue);
   padding: 1.5rem 0;
   margin-bottom: 3rem;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(90deg, rgba(0, 120, 255, 0.8), rgba(0, 255, 150, 0.8));
+  background: linear-gradient(90deg, 
+      rgba(139, 110, 78, 0.9),    /* #8B6E4E with 0.9 opacity */
+      rgba(107, 86, 63, 0.9)      /* #6B563F with 0.9 opacity - darker brown */
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;           /* For broader browser support */
+  color: transparent;              /* Fallback */
 }
 
-/* Adding an underline effect */
+/* Add a subtle text shadow for depth */
 .features .heading::after {
-  content: "";
-  display: block;
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100px;
-  height: 4px;
-  background: var(--Soft-Red);
-  margin: 10px auto 0;
-  border-radius: 5px;
-  transition: width 0.3s ease-in-out;
+  height: 3px;
+  background: linear-gradient(90deg, 
+      #8B6E4E,                    /* Primary brown */
+      #6B563F                     /* Secondary darker brown */
+  );
+  border-radius: 2px;
 }
 
-/* Subtle hover effect */
-.features .heading:hover::after {
-  width: 150px;
+/* Fallback for browsers that don't support gradient text */
+@supports not (background-clip: text) {
+  .features .heading {
+      background: none;
+      -webkit-text-fill-color: #8B6E4E;
+      color: #8B6E4E;
+  }
 }
 
 .features .row {
@@ -557,7 +569,7 @@ html {
 .features .row .content h1 {
   font-size: 4rem;
   padding: 1rem 0;
-  color: var(--Very-Dark-Blue);
+  color:  #8B6E4E;;
 }
 
 .features .row .content p {
@@ -581,7 +593,7 @@ html {
 /* General Button Styling */
 .buttonn {
   padding: 12px 25px;
-  border: 2px solid #00a859;
+  border: 2px solid  #8B6E4E;;
   border-radius: 50px;
   background: linear-gradient(135deg, #f2f2f2, #e6e6e6); /* Soft gradient effect */
   color: #333;
@@ -605,14 +617,14 @@ html {
 
 /* Default Green Color for the First Button */
 .button-container0 .buttonn:first-child {
-  background: #00a859;
+  background:  #6B8E23;
   color: white;
   box-shadow: 0px 5px 15px rgba(0, 168, 89, 0.4);
 }
 
 /* Hover Effects */
 .buttonn:hover {
-  background: #00a859;
+  background:  #8B6E4E;;
   color: white;
   box-shadow: 0px 5px 15px rgba(0, 168, 89, 0.3); /* Glowing effect */
   transform: translateY(-3px);
@@ -626,7 +638,7 @@ html {
 
 /* Active Button */
 .active {
-  background-color: #00a859;
+  background-color:  #8B6E4E;;
   color: white;
   box-shadow: 0px 5px 15px rgba(0, 168, 89, 0.4);
 }
@@ -723,14 +735,14 @@ html {
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: bold;
-  background-color: #3498db;
+  background-color: #6B8E23;
   color: #fff;
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .all-btn:hover {
-  background-color: #2980b9;
+  background-color:  #8B6E4E;;
   transform: scale(1.05);
 }
 
@@ -761,12 +773,12 @@ html {
 /* Style for Instagram icon */
 .box a i.fa-instagram {
   font-size: 24px;
-  color: #405de6;
+  color:  #8B6E4E;;
 }
 
 /* Style for Instagram icon on hover */
 .box a i.fa-instagram:hover {
-  background-color: #405de6;
+  background-color:  #8B6E4E;;
   border-radius: 50%;
   padding: 5px;
   color: var(--Soft-Blue);
@@ -777,12 +789,12 @@ html {
 /* Style for LinkedIn icon */
 .box a i.fa-linkedin {
   font-size: 24px;
-  color: #0077b5;
+  color:  #8B6E4E;;
 }
 
 /* Style for LinkedIn icon on hover */
 .box a i.fa-linkedin:hover {
-  background-color: #0077b5;
+  background-color:  #8B6E4E;;
   border-radius: 50%;
   padding: 5px;
   color: var(--Soft-Blue);
@@ -793,7 +805,7 @@ html {
 /* Style for GitHub icon */
 .box a i.fa-github {
   font-size: 24px;
-  color: #333;
+  color:  #8B6E4E;;
 }
 
 /* Style for GitHub icon on hover */
@@ -801,7 +813,7 @@ html {
   background-color: #333;
   border-radius: 50%;
   padding: 5px;
-  color: var(--Soft-Blue);
+  color:  #8B6E4E;;
   border: 2px solid var(--Soft-Blue);
   color: rgb(255, 255, 255);
 }
@@ -921,7 +933,7 @@ html {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #3498db;
+  background-color:  #463428;
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -1076,50 +1088,70 @@ iframe.goog-te-menu-frame {
 
 /* footer section ends */
   /* Newsletter Styles */
-.newsletter-section {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
-  text-align: center;
+  .newsletter-section {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
 }
 
 .newsletter-container {
-  max-width: 500px;
-  margin: 0 auto;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .newsletter-section h2 {
-  color: #333;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
 }
 
 .newsletter-section p {
-  color: #666;
-  margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
 }
 
 .newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .form-group {
-  position: relative;
+    position: relative;
 }
 
-.newsletter-form input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #b6e0f3;
-  border-radius: 8px;
-  font-size: 16px;
+.newsletter-form input,
+.newsletter-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.newsletter-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+}
+
+.newsletter-form input:focus,
+.newsletter-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 .subscribe-btn {
-  background-color: #b6e0f3;
+  background-color:  #c8b198;;
   color: #333;
   padding: 12px 24px;
   border: none;

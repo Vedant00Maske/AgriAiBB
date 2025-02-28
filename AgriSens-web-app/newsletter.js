@@ -22,13 +22,13 @@ document.getElementById('newsletterForm').addEventListener('submit', function(ev
     // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+    const feedback = document.getElementById('feedback').value;
 
     // Prepare template parameters
     const templateParams = {
         to_name: name,
         to_email: email,        // This will be used as the recipient's email
-        phone_number: phone,
+        feedback: feedback || 'No feedback provided', // Handle empty feedback
         subscription_date: getCurrentDateTime(),
         reply_to: email,        // Allows the user to reply to their confirmation email
     };
@@ -55,7 +55,9 @@ function showSuccessMessage() {
     const successMessage = document.getElementById('success-message');
     successMessage.style.display = 'block';
     successMessage.className = 'message success-message';
-    successMessage.textContent = 'Thank you for subscribing! Please check your email for confirmation.';
+    const feedbackText = document.getElementById('feedback').value ? 
+        ' Thank you for your feedback!' : '';
+    successMessage.textContent = `Thank you for subscribing!${feedbackText} Please check your email for confirmation.`;
 
     // Hide message after 5 seconds
     setTimeout(() => {
@@ -79,7 +81,32 @@ function clearForm() {
     document.getElementById('newsletterForm').reset();
 }
 
-// Phone number validation
-document.getElementById('phone').addEventListener('input', function(e) {
-    this.value = this.value.replace(/[^0-9]/g, '');
+// Add form validation
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+document.getElementById('newsletterForm').addEventListener('input', function(e) {
+    const emailInput = document.getElementById('email');
+    const submitButton = this.querySelector('button[type="submit"]');
+    
+    if (emailInput.value && !validateEmail(emailInput.value)) {
+        emailInput.setCustomValidity('Please enter a valid email address');
+        submitButton.disabled = true;
+    } else {
+        emailInput.setCustomValidity('');
+        submitButton.disabled = false;
+    }
+});
+
+// Optional: Add character counter for feedback
+document.getElementById('feedback').addEventListener('input', function() {
+    const maxLength = 500; // Set your desired maximum length
+    const remaining = maxLength - this.value.length;
+    
+    if (remaining < 0) {
+        this.value = this.value.slice(0, maxLength);
+        return;
+    }
 });
