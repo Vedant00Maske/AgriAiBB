@@ -61,8 +61,8 @@
 
 ## 🤝 Deployment
 - The ML Models are deployed on Strealit and Platform is deployed on Vercel and there is also it is deployed on a mobile app for accesebility.
-- # Follwing is the link of the platform: https://agri-ai-bb.vercel.app/
-- # Download Our App: [Click here to download the latest APK](https://drive.google.com/drive/folders/19h12R8blya25cRRtdQ_1-Kf5CTblt-11)
+- ### Follwing is the link of the platform: https://agri-ai-bb.vercel.app/
+- ### Download Our App: [Click here to download the latest APK](https://drive.google.com/drive/folders/19h12R8blya25cRRtdQ_1-Kf5CTblt-11)
 
 
 ## 🤝 Contributing
