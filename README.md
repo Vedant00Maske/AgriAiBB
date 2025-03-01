@@ -11,50 +11,27 @@
 - **🌎 Language Translation**: Breaking barriers with multi-language support for global accessibility.
 
 ## 🏗️ Tech Stack
-- **Frontend**: React, Tailwind CSS, GSAP
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Machine Learning**: Python, TensorFlow, Scikit-learn
-- **Cloud Services**: AWS / Firebase (for deployment & storage)
+- **Frontend**: HTML, Vanilla CSS, JS
+- **Machine Learning**: Python, TensorFlow, Scikit-learn, Panda, NumPy, Keras, Matplotlib
+- **Cloud Services**: Streamlit, Vercel
 
 ## 📂 Project Structure
 ```
-BioSage/
-│── frontend/         # React-based UI
-│── backend/          # Express.js server & APIs
-│── models/           # AI models for predictions
-│── datasets/         # Training datasets
-│── docs/             # Documentation
-│── README.md         # Project Readme
+/AGRIAIBB
+│── /biosage-web-app
+│── /CROP-PRICE-PREDICTION
+│── /CROP-RECOMMENDATION
+│── /FERTILIZER-CLASSIFICATION
+│── /PLANT-DISEASE-IDENTIFICATION
+│── .gitignore
+│── DISEASE-GUIDE.md
+│── IEEE_Paper_Smart_Crop_Recommendation_System.pdf
+│── LICENSE
+│── SystemArchitecture.md
 ```
 
-## 🎯 Installation & Usage
-### Prerequisites
-- Node.js & npm
-- Python (for AI models)
-- MongoDB (Database)
 
-### Setup Instructions
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/BioSage.git
-   cd BioSage
-   ```
-2. **Install dependencies**
-   ```bash
-   cd frontend && npm install
-   cd ../backend && npm install
-   ```
-3. **Run the application**
-   ```bash
-   cd backend && npm start
-   cd frontend && npm run dev
-   ```
 
-## 🛠️ Future Enhancements
-- **AI-powered voice assistant** for hands-free interaction
-- **Blockchain integration** for secure transactions & traceability
-- **Automated weather-based alerts**
 
 ## 🤝 Contributing
 Contributions are welcome! Fork the repository, create a branch, and submit a pull request.
