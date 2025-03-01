@@ -60,8 +60,8 @@
 | KNN                  | 97.5       |
 
 ## 🤝 Deployment
-The ML Models are deployed on Strealit and the Platform is deployed on Vercel
-Follwing is the link of the platform: https://agri-ai-bb.vercel.app/
+- The ML Models are deployed on Strealit and Platform is deployed on Vercel
+- Follwing is the link of the platform: https://agri-ai-bb.vercel.app/
 
 ## 🤝 Contributing
 Contributions are welcome! Fork the repository, create a branch, and submit a pull request.
