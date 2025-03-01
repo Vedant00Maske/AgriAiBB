@@ -11,6 +11,8 @@
 - **🌎 Language Translation**: Breaking barriers with multi-language support for global accessibility.
 - **🟤 3D Soil Analysis**: Crop-Recommendation based on the soil attributes from a 3D Model.
 - **🛞 The Crop Wheel**: Suugests varied crops based on different seasons selected by the User in the Wheel.
+- **💰 Crop Price Prediction**: AI-driven market analysis that forecasts crop prices based on historical trends, demand-supply patterns, and external factors, empowering farmers to make informed selling decisions and maximize profits.
+- **📱 Android Support**: A fully optimized mobile application that allows farmers to access all features seamlessly, ensuring real-time updates, easy navigation, and offline support for uninterrupted farming assistance.
 
 ## 🏗️ Tech Stack
 - **Frontend**: HTML, Vanilla CSS, JS, Three.js
