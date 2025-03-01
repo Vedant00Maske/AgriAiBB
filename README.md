@@ -2,6 +2,7 @@
 
 ## 🚀 Overview
 **BioSage** is an AI-powered farming assistant designed to revolutionize modern agriculture. It provides farmers with intelligent recommendations for crops, fertilizers, and disease management, alongside a community-driven platform for real-time discussions and a multilingual interface for accessibility.
+Link of the platform: https://agri-ai-bb.vercel.app/
 
 ## ✨ Features
 - **🌾 Crop Recommendation**: AI-based suggestions for optimal crop selection based on soil conditions.
