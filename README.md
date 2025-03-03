@@ -8,16 +8,17 @@ Link of the platform: https://agri-ai-bb.vercel.app/
 - **🌾 Crop Recommendation**: AI-based suggestions for optimal crop selection based on soil conditions.
 - **🌿 Fertilizer Recommendation**: Smart analysis to recommend the best fertilizers for increased yield.
 - **🦠 Crop Disease Prediction**: Image-based disease detection using deep learning models.
+- **💰 Crop Price Prediction**: AI-driven market analysis that forecasts crop prices based on historical trends, demand-supply patterns, and external factors, empowering farmers to make informed selling decisions and maximize profits.
+- **📱 Android Support**: A fully optimized mobile application that allows farmers to access all features seamlessly, ensuring real-time updates, easy navigation, and offline support for uninterrupted farming assistance.
 - **👨‍🌾 Farmer's Community**: A dedicated forum for farmers to connect, share insights, and solve challenges.
 - **🌎 Language Translation**: Breaking barriers with multi-language support for global accessibility.
 - **🟤 3D Soil Analysis**: Crop-Recommendation based on the soil attributes from a 3D Model.
 - **🛞 The Crop Wheel**: Suugests varied crops based on different seasons selected by the User in the Wheel.
-- **💰 Crop Price Prediction**: AI-driven market analysis that forecasts crop prices based on historical trends, demand-supply patterns, and external factors, empowering farmers to make informed selling decisions and maximize profits.
-- **📱 Android Support**: A fully optimized mobile application that allows farmers to access all features seamlessly, ensuring real-time updates, easy navigation, and offline support for uninterrupted farming assistance.
+
 
 ## 🏗️ Tech Stack
 - **Frontend**: HTML, Vanilla CSS, JS, Three.js
-- **Machine Learning**: Python, TensorFlow, Scikit-learn, Panda, NumPy, Keras, Matplotlib
+- **Machine Learning**: Python, TensorFlow, Scikit-learn, Panda, NumPy, Keras, Matplotlib, Gemini API
 - **Cloud Services**: Streamlit, Vercel
 
 ## 📂 Project Structure
